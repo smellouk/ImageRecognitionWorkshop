@@ -24,9 +24,9 @@ class ResultActivity : AppCompatActivity() {
         val image = intent.extras.getByteArray("TAKEN_IMAGE")
         nyris
             .imageMatching()
-            .exact(true)
-            .similarity(false) // Activate only similarity search
-            .ocr(false)
+            /*.exact(false)
+            .similarity(true) // Activate only similarity search
+            .ocr(false)*/
             /*.similarityThreshold(0.4F)*/ //return mOffers only with score equal or above 0.7F
             .match(image)
             .subscribe({
