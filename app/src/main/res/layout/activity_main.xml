@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,7 +14,35 @@
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
         app:imageSize="512x512"/>
-
+    <CheckBox
+        android:id="@+id/cbExact"
+        android:checked="true"
+        android:layout_alignLeft="@+id/cbSimilarity"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exact"
+        android:textColor="@android:color/white"/>
+    <CheckBox
+        android:id="@+id/cbSimilarity"
+        android:checked="true"
+        android:layout_below="@+id/cbExact"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Similarity"
+        android:textColor="@android:color/white"/>
+    <CheckBox
+        android:id="@+id/cbOcr"
+        android:checked="true"
+        android:layout_below="@+id/cbSimilarity"
+        android:layout_alignLeft="@+id/cbSimilarity"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OCR"
+        android:textColor="@android:color/white"/>
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabCamera"
         android:layout_width="wrap_content"
@@ -21,8 +50,7 @@
         android:tint="@android:color/white"
         app:srcCompat="@drawable/ic_camera"
         android:layout_marginBottom="@dimen/fab_margin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

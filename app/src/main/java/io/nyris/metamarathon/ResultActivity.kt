@@ -20,13 +20,16 @@ class ResultActivity : AppCompatActivity() {
 
         mAdapter = OfferListAdapter()
         rcOffers.adapter = mAdapter
+        val exact = intent.extras.getBoolean("EXACT")
+        val similarity = intent.extras.getBoolean("SIMILARITY")
+        val ocr = intent.extras.getBoolean("OCR")
 
         val image = intent.extras.getByteArray("TAKEN_IMAGE")
         nyris
             .imageMatching()
-            .exact(true)
-            .similarity(false) // Activate only similarity search
-            .ocr(false)
+            .exact(exact)
+            .similarity(similarity) // Activate only similarity search
+            .ocr(ocr)
             /*.similarityThreshold(0.4F)*/ //return mOffers only with score equal or above 0.7F
             .match(image)
             .subscribe({

@@ -31,6 +31,9 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks{
             override fun run() {
                 val intent = Intent(this@MainActivity, ResultActivity::class.java)
                 val bundle = Bundle()
+                bundle.putBoolean("EXACT", cbExact.isChecked)
+                bundle.putBoolean("SIMILARITY", cbSimilarity.isChecked)
+                bundle.putBoolean("OCR", cbOcr.isChecked)
                 bundle.putByteArray("TAKEN_IMAGE", resizedImage)
                 intent.putExtras(bundle)
 
